@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AutoRent.Models.CarBooking>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item  mb-4">
+                    <img class="img-fluid mb-4" src="@Url.Content(item.Car.CarLogo)" alt="">
+                    <h4 class="text-uppercase mb-4">@item.Car.Company.UserName</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>@item.BookingId</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>@item.StartDate</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>@item.EndDate</span>
+                        </div>
+                    </div>
+
+
+                    <a class="btn btn-primary px-3" asp-action="Details" asp-controller="CarBookings" asp-route-id="@item.BookingId">View Booking Details</a>
+                    <a class="btn btn-primary px-3" asp-action="Create" asp-controller="CarReviews" asp-route-id="@item.BookingId">Add Review</a>
+
+                </div>
+            </div>
+        }
+        </div>
+</body>

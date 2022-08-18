@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AutoRent.Models.Car>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Company/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<span class="text-danger">@ViewBag.CarAddMsg</span>
+<body>
+    <div></div>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            @*<tr>
+
+                        <td>
+                            <img src="@Url.Content(item.CarLogo)" />
+                        </td>
+                        </tr>
+                <tr>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.CarId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.CarId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.CarId">Delete</a>
+                        </td>
+                    </tr>*@
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item  mb-4">
+                    <img class="img-fluid mb-4" src="@Url.Content(item.CarLogo)" width="150px" height="150px" alt="">
+                    <h4 class="text-uppercase mb-4">@item.CarDesc</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>@item.ProdYear</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>@item.GearType</span>
+                        </div>
+                        <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>@item.Price $/Day</span>
+                         </div>
+                    </div>
+
+                    <a class="btn btn-primary px-3" asp-action="Edit" asp-route-id="@item.CarId">Edit</a>
+                    <a class="btn btn-primary px-3" asp-action="Details" asp-route-id="@item.CarId">View</a>
+
+                </div>
+            </div>
+        }
+        </div>
+</body>
+

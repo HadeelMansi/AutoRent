@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div>
+        <span>Car Bookings</span>
+        <a asp-action="Index" asp-controller="Cars" asp-area="User" class="dropdown-item">View Cars To Reserve</a>
+        <a asp-action="Index" asp-controller="CarBookings" asp-area="User" class="dropdown-item">My Car Bookings</a>
+    </div>
+    <p>
+
+    </p>
+    <div>
+        <span>Car Reviews</span>
+        <a asp-action="Index" asp-controller="CarBookings" asp-area="User" class="dropdown-item">View Cars To Review</a>
+        <a asp-action="Index" asp-controller="CarReviews" asp-area="User" class="dropdown-item">My Car Reviews</a>
+    </div>
+</body>

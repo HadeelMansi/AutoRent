@@ -1,0 +1,54 @@
+﻿@model AutoRent.Models.CarReview
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+<table>
+    <tr>
+        <td>
+            <img class="img-fluid mb-4" src="@Url.Content(Model.CarBooking.Car.CarLogo)" alt="">
+        </td>
+        <td>
+            <div>
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.CarBooking.Car.CarDesc)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.CarBooking.Car.CarDesc)
+                    </dd>
+                    <dt class="col-sm-2">
+                        Booking Date
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.CarBooking.StartDate)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ReviewDate)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ReviewDate)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Rate)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Rate)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ReviewDesc)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ReviewDesc)
+                    </dd>
+                </dl>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div>
+    <a asp-action="Index" asp-controller="CarReviews">Back to List</a>
+</div>
+

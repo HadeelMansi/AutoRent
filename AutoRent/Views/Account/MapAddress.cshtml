@@ -1,0 +1,59 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Map an Address</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMY7Oid9t6Cb6vus9KrjfBHY0TFiiSPqA" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <h1>Map an Address</h1>
+    <form method="post">
+
+
+        <div class="row">
+            <div class="col-md-6 text-justify" id="googleMap">
+            </div>
+
+            <div class="col-md-6 text-justify">
+
+                <h3> Dirección</h3>
+                <address>
+                    Parque España 2 <br />
+                    San Martinito <br />
+                    72197 Tlaxcalancingo, PUE
+                </address>
+
+                <h3>¿Cómo llegar?</h3>
+                <br />
+                <p>
+                    Sobre vía Atlixcayotl en sentido a Atlixco, después de pasar la agencia Volkswagen Angelopolis, dar vuelta casi en "U" a la derecha. Continuar derecho pasando por Fracc. Santa Cecilia, adelante encontrarán a la izquierda la entrada al Fracc. Misión de San Martinito, en esa esquina dar vuelta a la derecha, avanzando 50 metros encontrarán la entrada al estacionamiento del Club donde pueden estacionarse; nuestras instalaciones están a la derecha de la puerta principal.
+                </p>
+                <h3>¿Perdido?</h3>
+                <p>
+                    Llámanos y te orientamos tel. (222)699 54 18 /Cel. 22 21 61 32 02/ 22 23 23 12 46 en la ciudad de Puebla.
+                </p>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
+$(document).ready(function () {
+    var gmarkers = [];
+    var map;
+
+    function initialize() {
+
+        var mapProp = {
+            center: new google.maps.LatLng(20.593684, 78.96288), //India Lat and Lon
+            zoom: 2,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+});

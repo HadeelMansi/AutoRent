@@ -1,0 +1,86 @@
+﻿@model AutoRent.Models.CarBooking
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Company/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <tr>
+        <td>
+            <img class="img-fluid mb-4" src="@Url.Content(Model.Car.CarLogo)" alt="">
+        </td>
+        <td>
+            <div>
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Car.CarDesc)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Car.CarDesc)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.StartDate)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.EndDate)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.EndDate)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.PickupCity)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.PickupCity.CityName)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.PickupLocation)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.PickupLocation)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DropoffCityId)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @ViewBag.DropoffCity
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DropoffLocation)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DropoffLocation)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.PaymentMethod)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.PaymentMethod)
+                    </dd>
+                </dl>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div>
+    @if (Model.IsActive == true && Model.Car.IsActive == true && Model.EndDate < DateTime.Now)
+    {
+        <a class="btn btn-primary px-3" asp-action="Edit" asp-route-id="@Model.BookingId">Confirm Booking</a>
+        <a asp-action="Index" asp-controller="CarBookings">Back to List</a>
+    }
+    @if (Model.EndDate > DateTime.Now & Model.Car.IsActive == false)
+    {
+        <a asp-action="ActiveBookings" asp-controller="CarBookings">Back to List</a>
+    }
+    @if (Model.EndDate <= DateTime.Now)
+    {
+        <a asp-action="PreviousBookings" asp-controller="CarBookings">Back to List</a>
+    }
+
+</div>
+

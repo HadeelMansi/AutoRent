@@ -1,0 +1,98 @@
+﻿@model AutoRent.Models.Car
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Company/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <table>
+        <tr>
+            <td>
+     <img class="img-fluid mb-4" src="@Url.Content(Model.CarLogo)" width="150px" height="150px" alt=""></td>
+        <td>
+         <div>
+                 <dl class="row">
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.Company)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.Company.Id)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.Category)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.Category.CategoryName)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.Vendor)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.Vendor.VendorName)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.CarDesc)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.CarDesc)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.PlateNo)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.PlateNo)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.ProdYear)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.ProdYear)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.Color)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.Color)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.SeatNo)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.SeatNo)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.DoorNo)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.DoorNo)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.IsCondishended)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.IsCondishended)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.GearType)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.GearType)
+                     </dd>
+                     <dt class="col-sm-2">
+                         @Html.DisplayNameFor(model => model.Price)
+                     </dt>
+                     <dd class="col-sm-10">
+                         @Html.DisplayFor(model => model.Price)
+                     </dd>
+                    
+                     </dl>
+             </div>
+                 </td>
+            </tr>
+        </table>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

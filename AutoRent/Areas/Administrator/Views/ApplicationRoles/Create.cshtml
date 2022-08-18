@@ -1,0 +1,60 @@
+﻿@model AutoRent.Areas.Administrator.Models.ViewModels.CreateRoleViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>ApplicationRole</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RoleName" class="control-label"></label>
+                <input asp-for="RoleName" class="form-control" />
+                <span asp-validation-for="RoleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdsNo" class="control-label"></label>
+                <input asp-for="AdsNo" class="form-control" />
+                <span asp-validation-for="AdsNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PicsNo" class="control-label"></label>
+                <input asp-for="PicsNo" class="form-control" />
+                <span asp-validation-for="PicsNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoleImg" class="control-label"></label>
+                <table>
+                    <tr>
+                        <td><input type="file" asp-for="RoleImg" name="RoleImg" /> </td>
+                    </tr>
+                </table>
+                <span asp-validation-for="RoleImg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderNo" class="control-label"></label>
+                <input asp-for="OrderNo" class="form-control" />
+                <span asp-validation-for="OrderNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
