@@ -114,7 +114,7 @@ namespace AutoRent.Areas.Administrator.Controllers
         }
 
         // GET: Administrator/ApplicationRoles/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public  IActionResult Edit(int? id)
         {
             if (id == null)
             {
