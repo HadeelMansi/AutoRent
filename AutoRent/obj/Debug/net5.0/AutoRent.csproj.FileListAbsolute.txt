@@ -496,3 +496,4 @@ C:\Users\hadeel.almansi\source\repos\AutoRent\AutoRent\obj\Debug\net5.0\Razor\Vi
 C:\Users\hadeel.almansi\source\repos\AutoRent\AutoRent\obj\Debug\net5.0\Razor\Views\Shared\Components\Vendor\Default.cshtml.g.cs
 C:\Users\hadeel.almansi\source\repos\AutoRent\AutoRent\obj\Debug\net5.0\Razor\Views\Home\Cars.cshtml.g.cs
 C:\Users\hadeel.almansi\source\repos\AutoRent\AutoRent\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\hadeel.almansi\source\repos\AutoRent\AutoRent\obj\Debug\net5.0\Razor\Views\Home\Contact.cshtml.g.cs
