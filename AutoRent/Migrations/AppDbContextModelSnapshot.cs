@@ -277,6 +277,36 @@ namespace AutoRent.Migrations
                     b.ToTable("CarCategories");
                 });
 
+            modelBuilder.Entity("AutoRent.Models.CarImage", b =>
+                {
+                    b.Property<int>("CarImageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CarImg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("CarImageId");
+
+                    b.HasIndex("CarId");
+
+                    b.ToTable("CarImages");
+                });
+
             modelBuilder.Entity("AutoRent.Models.CarReview", b =>
                 {
                     b.Property<int>("ReviewId")
@@ -561,6 +591,15 @@ namespace AutoRent.Migrations
                     b.Navigation("Car");
 
                     b.Navigation("PickupCity");
+                });
+
+            modelBuilder.Entity("AutoRent.Models.CarImage", b =>
+                {
+                    b.HasOne("AutoRent.Models.Car", "Car")
+                        .WithMany()
+                        .HasForeignKey("CarId");
+
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("AutoRent.Models.CarReview", b =>

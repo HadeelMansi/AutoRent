@@ -71,7 +71,7 @@ namespace AutoRent.Areas.Company.Controllers
             if (carsCount > 0)
             {
                 var companyId = Cars.FirstOrDefault().CompanyId;
-                var roleId = _context.UserRoles.FirstOrDefault().RoleId;
+                var roleId = _context.UserRoles.Where(r => r.UserId == companyId).FirstOrDefault().RoleId;
                 var AllowedCarsNo = _context.ApplicationRole.Include(r => r.identityRole).Where(r => r.identityRole.Id == roleId).FirstOrDefault().AdsNo;
                 if (carsCount >= AllowedCarsNo)
                 {

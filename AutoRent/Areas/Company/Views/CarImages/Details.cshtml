@@ -1,0 +1,15 @@
+﻿@model AutoRent.Models.CarImage
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Areas/Company/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <img src="@Url.Content(Model.CarImg)" alt="">
+</div>
+<div>
+    <a asp-action="Index" asp-route-id="@Model.Car.CarId" asp-area="Company" asp-controller="CarImages">Back to List</a>
+</div>

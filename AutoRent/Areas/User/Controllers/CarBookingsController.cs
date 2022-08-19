@@ -37,7 +37,7 @@ namespace AutoRent.Areas.User.Controllers
                 return NotFound();
             }
 
-            var carBooking = await _context.CarBookings
+            var carBooking = await _context.CarBookings.Include(c => c.Car).Include(c => c.Car.Company)
                 .Include(c => c.PickupCity)
                 .FirstOrDefaultAsync(m => m.BookingId == id);
             if (carBooking == null)
@@ -102,7 +102,7 @@ namespace AutoRent.Areas.User.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("BookingId,CarId,StartDate,EndDate,PickupCityId,PickupLocation,DropoffCityId,DropoffLocation,PaymentMethod,CreationDate,IsDeleted,IsActive")] CarBooking carBooking)
+        public async Task<IActionResult> Edit(Guid id, CarBooking carBooking)
         {
             if (id != carBooking.BookingId)
             {

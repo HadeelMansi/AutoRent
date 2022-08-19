@@ -18,6 +18,6 @@
     <WebStackScaffolding_EnablerDialogWidth>650</WebStackScaffolding_EnablerDialogWidth>
     <WebStackScaffolding_DbContextDialogWidth>650</WebStackScaffolding_DbContextDialogWidth>
     <WebStackScaffolding_ViewDialogWidth>650.4</WebStackScaffolding_ViewDialogWidth>
-    <WebStackScaffolding_LayoutPageFile>~/Views/Shared/_Layout.cshtml</WebStackScaffolding_LayoutPageFile>
+    <WebStackScaffolding_LayoutPageFile>~/Areas/Company/Views/Shared/_Layout.cshtml</WebStackScaffolding_LayoutPageFile>
   </PropertyGroup>
 </Project>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AutoRent.Models.CarImage>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Company/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <a class="aa-primary-btn" asp-action="Create" asp-route-id="@ViewBag.CarId" asp-controller="CarImages">Add Image</a>
+    <p></p>
+    <span class="text-danger">@ViewBag.CarImgsMsg</span>
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
+                @foreach (var item in Model)
+                {
+                    <div>
+                        <a href="#">
+                            <img src="@Url.Content(item.CarImg)" alt="" onclick="myFunction(this);">
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn"></span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
+    </div>
+
+    <script>
+        function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;
+            imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
+    </script>
+</body>

@@ -14,7 +14,7 @@
     <table>
         <tr>
             <td>
-                <img class="img-fluid mb-4" src="@Url.Content(Model.CarLogo)" alt="">
+                <img src="@Url.Content(Model.CarLogo)" height="300" alt="">
             </td>
             <td>
                 <div>
@@ -23,7 +23,7 @@
                             @Html.DisplayNameFor(model => model.Company)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Company.Id)
+                            @Html.DisplayFor(model => model.Company.UserName)
                         </dd>
                         <dt class="col-sm-2">
                             @Html.DisplayNameFor(model => model.Category)
@@ -89,7 +89,7 @@
                             @Html.DisplayNameFor(model => model.Price)
                         </dt>
                         <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Price)
+                            @Html.DisplayFor(model => model.Price) $/Day
                         </dd>
                     </dl>
                 </div>

@@ -23,12 +23,12 @@
                             <span>@item.GearType</span>
                         </div>
                         <div class="px-2">
-                                <i class="fa fa-road text-primary mr-1"></i>
-                                <span>@item.Price $/Day</span>
-                            </div>
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>@item.Price $/Day</span>
+                        </div>
                     </div>
                     <a class="btn btn-primary px-3" asp-action="Details" asp-route-id="@item.CarId">View</a>
-
+                    <a class="btn btn-primary px-3" asp-action="Index" asp-controller="CarImages" asp-area="company" asp-route-id="@item.CarId">Gallery</a>
                 </div>
             </div>
         }

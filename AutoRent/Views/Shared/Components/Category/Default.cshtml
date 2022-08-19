@@ -10,14 +10,6 @@
             <div class="team-item">
                 <a asp-action="CarByCategory" asp-controller="Home" asp-route-id="@item.CategoryId">
                     <img class="img-fluid w-100" src="@Url.Content(item.CategoryLogo)" alt="" />
-
-                @*<div class="position-relative py-4">
-                    <h4 class="text-uppercase">@item.CategoryName</h4>
-                    <p class="m-0">Designation</p>
-                        <div class="team-social position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
-                            <a class="btn btn-lg btn-primary btn-lg-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                </div>*@
                 </a>
             </div>
             }

@@ -16,6 +16,7 @@ namespace AutoRent.Data
         public DbSet<Car> Cars { get; set; }
         public DbSet<CarBooking> CarBookings { get; set; }
         public DbSet<CarReview> CarReviews { get; set; }
+        public DbSet<CarImage> CarImages { get; set; }
         public DbSet<ApplicationRole> ApplicationRole { get; set; }
 
     }

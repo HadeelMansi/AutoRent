@@ -25,8 +25,12 @@ namespace AutoRent.Areas.User.Controllers
         // GET: User/CarReviews
         public async Task<IActionResult> Index(int? id)
         {
-            return View(await _context.CarReviews.Include(r=>r.applicationUser).Include(r => r.CarBooking).Include(c => c.CarBooking.Car).Include(c => c.CarBooking.Car.Company).Where(r=>r.CarBooking.CarId == id).ToListAsync());
+            if (id != null)
+                return View(await _context.CarReviews.Include(r => r.applicationUser).Include(r => r.CarBooking).Include(c => c.CarBooking.Car).Include(c => c.CarBooking.Car.Company).Where(r => r.CarBooking.CarId == id).ToListAsync());
+            else
+                return View(await _context.CarReviews.Include(r=>r.applicationUser).Include(r => r.CarBooking).Include(c => c.CarBooking.Car).Include(c => c.CarBooking.Car.Company).Where(r=>r.applicationUser.UserName == User.Identity.Name).ToListAsync());
         }
+
 
         [AllowAnonymous]
         // GET: User/CarReviews/Details/5
