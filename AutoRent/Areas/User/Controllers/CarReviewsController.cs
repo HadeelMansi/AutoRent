@@ -21,13 +21,14 @@ namespace AutoRent.Areas.User.Controllers
         {
             _context = context;
         }
-
+        [AllowAnonymous]
         // GET: User/CarReviews
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
         {
-            return View(await _context.CarReviews.Include(r => r.CarBooking).Include(c => c.CarBooking.Car).Include(c => c.CarBooking.Car.Company).ToListAsync());
+            return View(await _context.CarReviews.Include(r=>r.applicationUser).Include(r => r.CarBooking).Include(c => c.CarBooking.Car).Include(c => c.CarBooking.Car.Company).Where(r=>r.CarBooking.CarId == id).ToListAsync());
         }
 
+        [AllowAnonymous]
         // GET: User/CarReviews/Details/5
         public async Task<IActionResult> Details(int? id)
         {

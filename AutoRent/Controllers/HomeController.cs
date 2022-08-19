@@ -74,7 +74,7 @@ namespace AutoRent.Controllers
 
         public IActionResult CarByCategory(int id)
         {
-            return RedirectToAction("Cars", new { routeId = id, routeType = "V" });
+            return RedirectToAction("Cars", new { routeId = id, routeType = "C" });
         }
     }
 }
