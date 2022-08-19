@@ -91,7 +91,8 @@
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
                         <a asp-action="Index" asp-controller="Home" asp-area="Company" class="nav-item nav-link active">Home</a>
-                        <a asp-action="About" asp-controller="Home" asp-area="" class="nav-item nav-link active">About</a>                        <div class="nav-item dropdown">
+                        <a asp-action="About" asp-controller="Home" asp-area="" class="nav-item nav-link">About</a>
+                        <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cars</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a asp-action="Index" asp-controller="Cars" asp-area="Company" class="dropdown-item">Car Listing</a>
@@ -112,7 +113,7 @@
                                 <a asp-action="Index" asp-controller="CarReviews" asp-area="Company" class="dropdown-item">Car Reviews</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a asp-action="Contact" asp-controller="Home" asp-area="" class="nav-item nav-link">Contact Us</a>
                     </div>
                 </div>
             </nav>
