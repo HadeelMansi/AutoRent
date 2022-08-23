@@ -42,11 +42,12 @@ namespace AutoRent.Areas.Company.Controllers
         // GET: Company/CarImages/Create
         public IActionResult Create(int id)
         {
+            ViewData["CarImgsMsg"] = "";
             var carImages = _context.CarImages.Include(c => c.Car).Include(c => c.Car.Company).Where(c => c.Car.CarId == id);
             var imgsCount = carImages.Count();
-            var CompanyId = carImages.FirstOrDefault().Car.CompanyId;
             if (imgsCount > 0)
             {
+                var CompanyId = carImages.FirstOrDefault().Car.CompanyId;
                 var roleId = _context.UserRoles.Where(r => r.UserId == CompanyId).FirstOrDefault().RoleId;
                 var AllowedPicsNo = _context.ApplicationRole.Include(r => r.identityRole).Where(r => r.identityRole.Id == roleId).FirstOrDefault().PicsNo;
                 if (imgsCount >= AllowedPicsNo)

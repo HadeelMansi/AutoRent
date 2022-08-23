@@ -90,7 +90,14 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a asp-action="Index" asp-controller="Home" asp-area="User" class="nav-item nav-link active">Home</a>
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <a asp-action="Index" asp-controller="Home" asp-area="User" class="nav-item nav-link active">Home</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Index" asp-controller="Home" asp-area="" class="nav-item nav-link active">Home</a>
+                        }
                         <a asp-action="About" asp-controller="Home" asp-area="" class="nav-item nav-link">About</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Car Bookings</a>
